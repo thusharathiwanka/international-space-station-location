@@ -10,6 +10,7 @@ const attribution =
 const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 const tiles = L.tileLayer(tileUrl, { attribution });
 tiles.addTo(MAP);
+let initialLoad = true;
 
 // selecting dom elements
 const lat = document.querySelector("#lat");
@@ -34,7 +35,10 @@ const setLocation = (latitude, longitude) => {
   // updating marker
   marker.setLatLng([latitude, longitude]);
   // updating map and zoom
-  MAP.setView([latitude, longitude], 3);
+  if (initialLoad) {
+    MAP.setView([latitude, longitude], 3);
+    initialLoad = false;
+  }
 };
 
 // initial call
