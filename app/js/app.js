@@ -1,5 +1,6 @@
 const API_URL = "https://api.wheretheiss.at/v1/satellites/25544";
 const MAP = L.map("map").setView([0, 0], 1.5);
+const marker = L.marker([0, 0]).addTo(MAP);
 const attribution =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
@@ -21,6 +22,10 @@ const getSatellite = async () => {
 const setLocation = (latitude, longitude) => {
   lat.textContent = latitude;
   long.textContent = longitude;
+
+  marker.setLatLng([latitude, longitude]);
 };
 
-setInterval(() => getSatellite(), 1000);
+setInterval(() => {
+  getSatellite();
+}, 1000);
