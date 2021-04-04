@@ -16,4 +16,4 @@ const setLocation = (latitude, longitude) => {
   long.textContent = longitude;
 };
 
-getSatellite();
+setInterval(() => getSatellite(), 1000);
