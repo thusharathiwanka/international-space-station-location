@@ -1,0 +1,22 @@
+html {
+  font-size: 100%;
+  font-family: "Work sans", sans-serif;
+}
+
+h1 {
+  padding: 2rem;
+}
+
+body {
+  width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+p:last-child {
+  padding-bottom: 2rem;
+}
+
+#map {
+  height: 600px;
+}

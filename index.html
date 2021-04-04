@@ -8,16 +8,26 @@
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300;400;500;600&display=swap"
          rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+         crossorigin="" />
       <link rel="stylesheet" href="./app/styles/style.css">
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+         crossorigin=""></script>
+      <link rel="icon" href="./app/img/launch.svg">
       <title>ISS Location</title>
    </head>
 
    <body>
       <header>
          <h1>International Space Station's Location</h1>
-         <p>Latitude - <span id="lat"></span></p>
-         <p>Longitude - <span id="long"></span></p>
+         <p>Latitude : <span id="lat"></span></p>
+         <p>Longitude : <span id="long"></span></p>
       </header>
+      <main>
+         <div id="map"></div>
+      </main>
       <script src="./app/js/app.js"></script>
    </body>
 
