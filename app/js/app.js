@@ -28,14 +28,17 @@ const getSatellite = async () => {
 // set location in text and map
 const setLocation = (latitude, longitude) => {
   // setting latitude and longitude as text
-  lat.textContent = latitude;
-  long.textContent = longitude;
+  lat.textContent = latitude.toFixed(2);
+  long.textContent = longitude.toFixed(2);
 
   // updating marker
   marker.setLatLng([latitude, longitude]);
+  // updating map and zoom
+  MAP.setView([latitude, longitude], 3);
 };
 
+// initial call
+getSatellite();
+
 // getting updated values per second
-setInterval(() => {
-  getSatellite();
-}, 1000);
+setInterval(getSatellite, 1000);
